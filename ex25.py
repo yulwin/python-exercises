@@ -30,25 +30,6 @@ def print_first_and_last(sentence):
 
 def print_first_and_last_sorted(sentence): 
     """Sorts the words then prints the first and last one."""
-words = sort_sentence(sentence) 
-print_first_word(words) 
-print_last_word(words)
-
-import ex25
-sentence = "All good things come to those who wait." 
-words = ex25.break_words(sentence) 
-words 
-sorted_words = ex25.sort_words(words) 
-sorted_words 
-ex25.print_first_word(words) 
-ex25.print_last_word(words) 
-words 
-ex25.print_first_word(sorted_words) 
-ex25.print_last_word(sorted_words) 
-sorted_words 
-sorted_words = ex25.sort_sentence(sentence) 
-sorted_words 
-ex25.print_first_and_last(sentence) 
-ex25.print_first_and_last_sorted(sentence)
-
-
+    words = sort_sentence(sentence) 
+    print_first_word(words) 
+    print_last_word(words)
