@@ -1,5 +1,5 @@
-def convert_number(s):
-    try:
-        return int(s)
-    expect ValueError:
-        return None
+  def convert_number(s):
+      try:
+          return int(s)
+      except ValueError:
+          return None
