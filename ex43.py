@@ -1,64 +1,6 @@
-class Scene(object):
-
-    def enter(self): 
-        pass
-
-
-class Engine(object):
-
-    def __init__(self, scene_map): 
-        pass
-
-    def play(self): 
-        pass
-
-class Death(Scene):
-
-    def enter(self): 
-        pass
-
-class CentralCorridor(Scene):
-
-    def enter(self): 
-        pass
-
-class LaserWeaponArmory(Scene):
-
-    def enter(self): 
-        pass
-
-class TheBridge(Scene):
-
-    def enter(self): 
-        pass
-
-class EscapePod(Scene):
-
-    def enter(self):
-     pass
-
-
-class Map(object):
-
-    def __init__(self, start_scene): 
-        pass
-
-    def next_scene(self, scene_name): 
-        pass
-
-    def opening_scene(self): 
-        pass
-
-
-a_map = Map('central_corridor') 
-a_game = Engine(a_map) 
-a_game.play()
-
-
-
 
 from sys import exit
-from random import radiant
+from random import randint
 from textwrap import dedent
 
 
@@ -83,9 +25,7 @@ class Engine(object):
         while current_scene != last_scene: 
             next_scene_name = current_scene.enter() 
             current_scene = self.scene_map.next_scene(next_scene_name)
-
-         # be sure to print out the last scene 
-         current_scene.enter( )
+            current_scene.enter()
 
 
 class Death(Scene):
@@ -138,7 +78,7 @@ class CentralCorridor(Scene):
                 """)) 
             return 'death'
 
-          elif action == "dodge!": 
+        elif action == "dodge!": 
           print(dedent("""
                 Like a world class boxer you dodge, weave, slip and 
                 slide right as the Gothon's blaster cranks a laser 
@@ -149,7 +89,7 @@ class CentralCorridor(Scene):
                 """)) 
           return 'death'
 
-       elif action == "tell a joke": 
+        elif action == "tell a joke": 
            print(dedent(""" 
                Lucky for you they made you learn Gothon insults in 
                the academy. You tell the one Gothon joke you know: 
@@ -162,7 +102,7 @@ class CentralCorridor(Scene):
                """)) 
            return 'laser_weapon_armory'
 
-       else: 
+        else: 
            print("DOES NOT COMPUTE!") 
            return 'central_corridor' 
 
@@ -192,21 +132,21 @@ class LaserWeaponArmory(Scene):
             guesses += 1 
             guess = input("[keypad]> ")
 
-          if guess == code: 
+        if guess == code: 
               print(dedent(""" 
-                  The container clicks open and the seal breaks, letting 
-                  gas out. You grab the neutron bomb and run as fast as 
-                  you can to the bridge where you must place it in the 
-                  right spot. 
-                  """)) 
+				  The container clicks open and the seal breaks, letting 
+				  gas out. You grab the neutron bomb and run as fast as 
+				  you can to the bridge where you must place it in the 
+				  right spot. 
+				  """)) 
               return 'the_bridge' 
-          else:
+        else:
               print(dedent(""" 
-                  The lock buzzes one last time and then you hear a 
-                  sickening melting sound as the mechanism is fused 
-                  together. You decide to sit there, and finally the 
-                  Gothons blow up the ship from their ship and you die. 
-                  """)) 
+				  The lock buzzes one last time and then you hear a 
+				  sickening melting sound as the mechanism is fused 
+				  together. You decide to sit there, and finally the 
+				  Gothons blow up the ship from their ship and you die. 
+				  """)) 
               return 'death'
 
 
@@ -236,7 +176,7 @@ class TheBridge(Scene):
               """)) 
           return 'death'
 
-      elif action == "slowly place the bomb": 
+        elif action == "slowly place the bomb": 
           print(dedent(""" 
               You point your blaster at the bomb under your arm and 
               the Gothons put their hands up and start to sweat. 
@@ -249,7 +189,7 @@ class TheBridge(Scene):
               """))
 
           return 'escape_pod'
-      else: 
+        else: 
           print("DOES NOT COMPUTE!") 
           return "the_bridge"
 
@@ -326,7 +266,7 @@ class Map(object):
 
 
 a_map = Map('central_corridor')
-a_game = Eigine(a_map)
+a_game = Engine(a_map)
 a_game.play()
     
        
